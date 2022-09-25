@@ -1,24 +1,9 @@
-# README
+## Test. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Validate that there is not elements in shard one database
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```ruby
+ActiveRecord::Base.connected_to(role: :reading, shard: :shard_one) do
+  Person.first
+end
+```
