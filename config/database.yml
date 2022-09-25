@@ -13,16 +13,20 @@ development:
   primary:
     <<: *default
     database: db/my_primary_database.sqlite3
+    adapter: sqlite3
   primary_replica:
     database: db/my_primary_database.sqlite3
     replica: true
+    adapter: sqlite3
   primary_shard_one:
     <<: *default
     database: db/my_primary_shard_one.sqlite3
+    adapter: sqlite3
   primary_shard_one_replica:
     <<: *default
     database: db/my_primary_shard_one.sqlite3
     replica: true
+    adapter: sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
